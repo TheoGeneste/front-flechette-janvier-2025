@@ -11,6 +11,8 @@ import 'react-toastify/dist/ReactToastify.css'
 import AuthContext from './Context/AuthContext'
 import { useState } from 'react'
 import AuthService from './Services/AuthService'
+import GamesPage from './Pages/GamesPage'
+import SecuRoute from './Wrappers/SecuRoute'
 
 function App() {
   const [user, setUser] = useState(AuthService.getUser());
@@ -25,6 +27,7 @@ function App() {
             <Route path="/" element={<HomePage />} />
             <Route path="/login" element={<LoginPage />} />
             <Route path="/register" element={<RegisterPage />} />
+            <Route path="/games" element={<SecuRoute><GamesPage /></SecuRoute>} />
           </Routes>
           <ToastContainer
             position="bottom-right"

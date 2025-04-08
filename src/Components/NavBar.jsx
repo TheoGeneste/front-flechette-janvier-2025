@@ -16,6 +16,9 @@ const NavBar = () => {
                 <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className="me-auto">
                         <Nav.Link onClick={() => { navigate("/login") }}>Home</Nav.Link>
+                        {isLoggedIn && <>
+                            <Nav.Link onClick={() => { navigate("/games") }}>Games</Nav.Link>
+                        </>}
                     </Nav>
                 </Navbar.Collapse>
                 <Nav>
